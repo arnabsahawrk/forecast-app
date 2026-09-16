@@ -32,6 +32,10 @@ const LocationModal = ({ onClose }) => {
   };
 
   const handleGeoLocation = () => {
+    if (!navigator.geolocation) {
+      setError("Geo location not found!");
+    }
+
     navigator.geolocation.getCurrentPosition(
       (positions) => {
         const { latitude, longitude } = positions.coords;
