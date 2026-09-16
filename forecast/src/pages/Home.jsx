@@ -17,14 +17,14 @@ const Home = () => {
           <button
             onClick={() => setClick(true)}
             type="button"
-            className="text-lg font-medium bg-blue-500 px-5 py-1 hover:scale-105 transition delay-75 rounded-4xl text-amber-100"
+            className="text-lg font-medium bg-blue-500 px-5 py-1 hover:scale-105 transition delay-75 rounded text-amber-100"
           >
             Check Forecast
           </button>
         </div>
       </div>
 
-      {click && <LocationModal />}
+      {click && <LocationModal onClose={() => setClick(false)} />}
     </>
   );
 };
